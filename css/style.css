@@ -57,11 +57,12 @@ img{
     font-size: 35px;
     font-weight: 500;
     /* padding: 10px; */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #ul li{
     padding: 10px;
     background-color: gray;
     /* width: fit-content; */
-    border: honeydew solid;
+    border: honeydew solid 10px;
 }
