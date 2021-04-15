@@ -297,4 +297,6 @@ function chart() {
 // console.log('votes',votesArr);
 
 // console.log('product.allproducts =',Product.allProducts);
+
+//calling the stored data
 getStoredData();
