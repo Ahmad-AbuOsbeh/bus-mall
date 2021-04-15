@@ -28,3 +28,9 @@ What observations or questions do you have about what you’ve learned so far?
 nothing for now
 How long did it take you to complete this assignment? And, before you started, how long did you think it would take you to complete this assignment?
 it took around 3 hours, I thought it needs around 2 hours.
+
+## lab 13
+today is Wednesday 14/4/2021
+
+- I have used the local storage to store the object Product.allProducts that contains all instances.
+- the shown and votes values still saved even you refresh the page or visit the page after a while, it will saved all previous data.
