@@ -2,7 +2,7 @@
 'use strict';
 //get container
 let containerElement = document.getElementById('container1');
-// console.log(containerElement);
+console.log(containerElement);
 
 let namesArr=[];
 let votesArr=[];
@@ -16,8 +16,8 @@ function Product(name, source) {
 
   Product.allProducts.push(this);
   namesArr.push(this.name);
-  // votesArr.push(Product.allProducts[this].votes);
-  // shownArr.push(Product.allProducts[this].shown);
+  // votesArr.push(this.votes);
+  // shownArr.push(this.shown);
 }
 
 //create array to store all objects
@@ -82,7 +82,7 @@ function getRandomNumber() {
   return Math.floor(Math.random() * Product.allProducts.length);
 
 }
-// console.log(getRandomNumber());
+console.log(getRandomNumber());
 
 //define three images, and give them a random number
 let leftImage;
@@ -117,7 +117,7 @@ function renderImages() {
 
   // console.log('indexArray.includes(middleImageIndex)',indexArray.includes(middleImageIndex));
 
-  // console.log('index array befor while loop', indexArray);
+  console.log('index array befor while loop', indexArray);
 
   while (leftImage.src === middleImage.src || middleImage.src === rightImage.src || rightImage.src === leftImage.src || indexArray.includes(leftImageIndex)|| indexArray.includes(middleImageIndex) || indexArray.includes(rightImageIndex) ) {
     leftImageIndex = getRandomNumber();
@@ -137,21 +137,19 @@ function renderImages() {
 
   indexArray=[];
   indexArray.push(leftImageIndex,middleImageIndex,rightImageIndex);
-  // console.log('index array after while loop', indexArray);
+  console.log('index array after while loop', indexArray);
 
   Product.allProducts[leftImageIndex].shown++;
-  // shownArr.push(Product.allProducts[leftImageIndex].shown);
   Product.allProducts[middleImageIndex].shown++;
-  // shownArr.push(Product.allProducts[middleImageIndex].shown);
   Product.allProducts[rightImageIndex].shown++;
 
   // shownArr.push(Product.allProducts[rightImageIndex].shown);
 
 
 
-  // console.log('shown from left', Product.allProducts[leftImageIndex].shown);
-  // console.log('shown from middle', Product.allProducts[middleImageIndex].shown);
-  // console.log('shown from right', Product.allProducts[rightImageIndex].shown);
+  console.log('shown from left', Product.allProducts[leftImageIndex].shown);
+  console.log('shown from middle', Product.allProducts[middleImageIndex].shown);
+  console.log('shown from right', Product.allProducts[rightImageIndex].shown);
 
 }
 
@@ -169,7 +167,7 @@ function selectRandomImage(event) {
   //  mainArrayIndex.push(indexArray)
   //  console.log('main array index',mainArrayIndex);
   // event.target.id;
-  // console.log('id', event.target.id);
+  console.log('id', event.target.id);
   // console.log('index array from the event listner', renderImages.indexArray);
 
 
@@ -180,7 +178,7 @@ function selectRandomImage(event) {
 
     if (event.target.id === 'left-img') {
       Product.allProducts[leftImageIndex].votes++;
-      // console.log('voting from left', Product.allProducts[leftImageIndex].votes);
+      console.log('voting from left', Product.allProducts[leftImageIndex].votes);
       // console.log('helloo from if');
 
     } if (event.target.id === 'middle-img') {
@@ -189,7 +187,7 @@ function selectRandomImage(event) {
 
     } if (event.target.id === 'right-img') {
       Product.allProducts[rightImageIndex].votes++;
-      // console.log('voting from right', Product.allProducts[rightImageIndex].votes);
+      console.log('voting from right', Product.allProducts[rightImageIndex].votes);
     }
 
     renderImages();
@@ -206,12 +204,12 @@ function selectRandomImage(event) {
     buttonElement.id='button';
     buttonContainer.appendChild(buttonElement);
     buttonElement.textContent='see results';
-    // console.log('i am from else', buttonElement);
+    console.log('i am from else', buttonElement);
     buttonElement = document.getElementById('button');
 
     buttonElement.addEventListener('click', renderList);
     function renderList(event2) {
-      // console.log('event2 id', event2.target.id);
+      console.log('event2 id', event2.target.id);
       if (event2.target.id === 'button') {
 
         let unorderedList = document.getElementById('ul');
@@ -229,8 +227,8 @@ function selectRandomImage(event) {
 
 
 
+        }
         chart();
-
         buttonElement.removeEventListener('click', renderList);
 
       }
@@ -245,8 +243,10 @@ function selectRandomImage(event) {
 
 // }
 
-// console.log('minimum', minClicks);
-// console.log('maximum', maxClicks);
+
+console.log('minimum', minClicks);
+console.log('maximum', maxClicks);
+
 
 
 // chart.js
@@ -254,7 +254,7 @@ function chart() {
   let ctx = document.getElementById('myChart').getContext('2d');
 
   let chart= new Chart(ctx,{
-    // what type is the chart
+  // what type is the chart
     type: 'bar',
 
     //  the data for showing
