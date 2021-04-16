@@ -47,7 +47,35 @@ new Product('water-can', 'img/water-can.jpg');
 new Product('wine-glass', 'img/wine-glass.jpg');
 
 
-console.log(Product.allProducts);
+// console.log(Product.allProducts);
+function storeData() {
+
+  let shownArrString= JSON.stringify(Product.allProducts);
+  // let votesArrString= JSON.stringify(votesArr);
+
+  let dataStoraged=localStorage.setItem('shown',shownArrString);
+  // localStorage.setItem('votes',votesArrString);
+
+}
+
+function getStoredData() {
+
+  let shownArrData= localStorage.getItem('shown');
+  // let votesArrData=localStorage.getItem('votes');
+
+
+  //  let dataVotes= JSON.parse('votes');
+  // console.log('datasown from function getstoreddata ===! null is',dataShown);
+  if (shownArrData !== null) {
+    let dataShown=JSON.parse(shownArrData);
+    Product.allProducts=dataShown;
+    console.log('i am from if');
+
+  }
+
+
+}
+
 
 //create random number of each image
 function getRandomNumber() {
@@ -115,6 +143,10 @@ function renderImages() {
   Product.allProducts[middleImageIndex].shown++;
   Product.allProducts[rightImageIndex].shown++;
 
+  // shownArr.push(Product.allProducts[rightImageIndex].shown);
+
+
+
   console.log('shown from left', Product.allProducts[leftImageIndex].shown);
   console.log('shown from middle', Product.allProducts[middleImageIndex].shown);
   console.log('shown from right', Product.allProducts[rightImageIndex].shown);
@@ -151,7 +183,7 @@ function selectRandomImage(event) {
 
     } if (event.target.id === 'middle-img') {
       Product.allProducts[middleImageIndex].votes++;
-      console.log('voting from middle', Product.allProducts[middleImageIndex].votes);
+      // console.log('voting from middle', Product.allProducts[middleImageIndex].votes);
 
     } if (event.target.id === 'right-img') {
       Product.allProducts[rightImageIndex].votes++;
@@ -160,7 +192,8 @@ function selectRandomImage(event) {
 
     renderImages();
 
-
+    storeData();
+    // console.log('product.all products for each click=',Product.allProducts);
 
   }
 
@@ -189,6 +222,10 @@ function selectRandomImage(event) {
         for (let i = 0; i < Product.allProducts.length; i++) {
           shownArr.push(Product.allProducts[i].shown);
           votesArr.push(Product.allProducts[i].votes);
+
+        }
+
+
 
         }
         chart();
@@ -252,4 +289,14 @@ function chart() {
   });
 
 }
+
+
+
+
+// console.log('shown',shownArr);
+// console.log('votes',votesArr);
+
+// console.log('product.allproducts =',Product.allProducts);
+getStoredData();
+
 
