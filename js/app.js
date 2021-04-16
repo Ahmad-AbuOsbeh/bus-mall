@@ -299,4 +299,6 @@ function chart() {
 // console.log('product.allproducts =',Product.allProducts);
 getStoredData();
 
+//finished the project
+
 

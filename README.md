@@ -34,3 +34,6 @@ today is Wednesday 14/4/2021
 
 - I have used the local storage to store the object Product.allProducts that contains all instances.
 - the shown and votes values still saved even you refresh the page or visit the page after a while, it will saved all previous data.
+
+## today is Friday 16/4/2021 
+- I have finished the project and fixed some issues with merging from lab13 branch to the main.
